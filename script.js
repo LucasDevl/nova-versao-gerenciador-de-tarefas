@@ -77,7 +77,7 @@ function saveTask() {
     this.formatInputs(taskDate, taskPriority, taskStatus);
 
     var taskCard =
-    " <div class='card mb-4 text-left p-3 border-0'> " +
+    " <div class='card mb-4 text-left p-3 border-0' id='card_'> " +
     "   <input class='d-none' id='id_card_"+ taskId +"' value="+ taskId +"> " +
     "   <div class='d-flex align-items-center justify-content-between pb-3'>" +
     "       <div class=''> " +
@@ -212,6 +212,6 @@ function deleteTask(task) {
 
 function confirmDelete(result) {
     if (result === 'S') {
-        document.getElementById(deleteTaskId).remove('idTask');
+        document.getElementById('card_').remove(taskId);
     }
 }
