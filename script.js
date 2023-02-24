@@ -85,7 +85,7 @@ function saveTask() {
     "           <input class='d-none' id='name_"+ taskId +"' value='" + taskName + "'> " +
     "       </div> " +
     "       <div class='action-icon'>" +
-    "           <i class='fa fa-pencil pe-2' data-bs-toggle='modal' data-bs-target='#modal_edit_task' onclick=editTask("+ taskId +")></i>" +
+    "           <i id='task_id_card' class='fa fa-pencil pe-2' data-bs-toggle='modal' data-bs-target='#modal_edit_task' onclick=editTask("+ taskId +")></i>" +
     "           <i class='fa fa-trash-can' data-bs-toggle='modal' data-bs-target='#modal_delete_task' onclick='deleteTask("+ taskId +")'></i>" +
     "       </div>" +
     "   </div> " +
@@ -214,4 +214,9 @@ function confirmDelete(result) {
     if (result === 'S') {
         document.getElementById('card_').remove(taskId);
     }
+}
+
+function editTask() {
+    let idCard = $('#'+ task).val();
+    document.getElementById('#task_id_edit').value = idCard;
 }
